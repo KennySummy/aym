@@ -45,6 +45,9 @@
         <module>sysytem-ribbon</module>
         <module>system-eurake</module>
         <module>sysytem-generator</module>
+        <module>system-redis</module>
+        <module>system-rabbitmq-server</module>
+        <module>system-rabbitmq-client</module>
     </modules>
 
 </project>
