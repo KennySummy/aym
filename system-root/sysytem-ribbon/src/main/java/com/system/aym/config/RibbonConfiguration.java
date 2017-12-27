@@ -1,35 +1,12 @@
 package com.system.aym.config;
 
-import com.netflix.client.config.IClientConfig;
-import com.netflix.loadbalancer.IPing;
 import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.PingUrl;
 import com.netflix.loadbalancer.RandomRule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.annotation.Resource;
-
 @Configuration
 public class RibbonConfiguration {
-
-    /**
-     * Our IPing is a PingUrl, which will ping a URL to check the status of each
-     * server.provider has, as you’ll recall, a method mapped to the / path;
-     * that means that Ribbon will get an HTTP 200 response when it pings a
-     * running provider server.
-     *
-     * server list defined in application.yml :listOfServers: localhost:8000,
-     * localhost:8002,localhost:8003
-     *
-     */
-    @Bean
-    public IPing ribbonPing() {
-        // ping url will try to access http://microservice-provider/provider/ to
-        // see if reponse code is 200 . check PingUrl.isAlive()
-        // param /provider/ is the context-path of provider service
-        return new PingUrl(false, "/provider/");
-    }
 
     /**
      * The IRule we set up, the AvailabilityFilteringRule, will use Ribbon’s

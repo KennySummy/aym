@@ -1,11 +1,14 @@
 package com.system.aym.test.controller;
 
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +23,9 @@ public class SysUserInfoController {
 
     @Resource
     private RestTemplate restTemplate;
+
+    @Resource
+    private LoadBalancerClient loadBalancerClient;
 
     /**
      * post 提交多个参数
@@ -54,6 +60,13 @@ public class SysUserInfoController {
 
         String body = responseEntity.getBody();
         return body;
+    }
+
+    @GetMapping("/test")
+    public String test() {
+        ServiceInstance serviceInstance = this.loadBalancerClient.choose("test-aym-api");
+        System.out.println("111" + ":" + serviceInstance.getServiceId() + ":" + serviceInstance.getHost() + ":" + serviceInstance.getPort());
+        return "1";
     }
 
 }
