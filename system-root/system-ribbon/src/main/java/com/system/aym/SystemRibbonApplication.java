@@ -19,10 +19,10 @@ public class SystemRibbonApplication {
         return new RestTemplate();
     }
 
-    @Bean
-    public IRule ribbonRule() {
-        return new RandomRule();
-    }
+//    @Bean
+//    public IRule ribbonRule() {
+//        return new RandomRule();
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(SystemRibbonApplication.class, args);

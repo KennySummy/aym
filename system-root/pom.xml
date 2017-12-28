@@ -42,9 +42,9 @@
         <module>test-aym-mapper</module>
         <module>test-aym-service</module>
         <module>test-aym-api</module>
-        <module>sysytem-ribbon</module>
+        <module>system-ribbon</module>
         <module>system-eurake</module>
-        <module>sysytem-generator</module>
+        <module>system-generator</module>
         <module>system-redis</module>
         <module>system-rabbitmq-server</module>
         <module>system-rabbitmq-client</module>
