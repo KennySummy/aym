@@ -48,6 +48,7 @@
         <module>system-redis</module>
         <module>system-rabbitmq-server</module>
         <module>system-rabbitmq-client</module>
+        <module>system-feign</module>
     </modules>
 
 </project>
