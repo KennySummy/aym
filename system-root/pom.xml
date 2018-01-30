@@ -49,6 +49,7 @@
         <module>system-rabbitmq-server</module>
         <module>system-rabbitmq-client</module>
         <module>system-feign</module>
+        <module>system-quotes</module>
     </modules>
 
 </project>
